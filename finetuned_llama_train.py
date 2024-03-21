@@ -133,9 +133,9 @@ class ModelTrainer:
         print(f"Accuracy: {accuracy*100:.2f}%")
 
 def main():
-    dataset_loader = DatasetLoader('dataset_name_here')
+    dataset_loader = DatasetLoader('medalpaca/medical_meadow_medqa')
     dataset_loader.train_test_split()
-    model_trainer = ModelTrainer('model_name_here', 'tokenizer_name_here')
+    model_trainer = ModelTrainer('meta-llama/Llama-2-7b-chat-hf', 'meta-llama/Llama-2-7b-chat-hf')
     model_trainer.prepare_for_training(dataset_loader.dataset)
     model_trainer.train()
     model_trainer.evaluate(dataset_loader.dataset['test'])
